@@ -97,7 +97,7 @@ export default {
       if (res.meta.status !== 200)
         return this.$message.console.error(res.meta.msg);
       this.menulist = res.data;
-      console.log(res);
+      // console.log(res);
     },
     // 点击按钮实现折叠与展开
     toggleCollapse() {
