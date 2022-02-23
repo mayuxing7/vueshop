@@ -3,6 +3,8 @@ html,body,#app{
     height: 100%;
     margin: 0;
     padding: 0;
+    /* 屏幕最小宽度1366px 强制宽度保持1366 不会出现样式变形 */
+    min-width: 1366px;
 }
 .el-breadcrumb{
     margin-bottom: 15px;
