@@ -12,9 +12,9 @@ import VueAxios from 'vue-axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
 
 // 设置拦截器
-axios.interceptors.request.use(config=>{
+axios.interceptors.request.use(config => {
   console.log(config);
-  config.headers.Authorization=window.sessionStorage.getItem('token')
+  config.headers.Authorization = window.sessionStorage.getItem('token')
 
   // ！！！必须return config！！！
   return config
@@ -29,10 +29,17 @@ import '@/assets/css/global.css'
 import '@/assets/fonts/iconfont.css'
 
 
+// 导入vue-table-with-tree-grid
+import TreeTable from 'vue-table-with-tree-grid'
+
+
+
 Vue.use(VueAxios, axios);
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
+
+Vue.component('tree-table',TreeTable)
 
 new Vue({
   router,

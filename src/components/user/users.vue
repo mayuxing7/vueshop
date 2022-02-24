@@ -476,7 +476,7 @@ export default {
     setRoleDialogClosed() {
       this.selectedRoleId = "";
       this.userInfo = {};
-    },  
+    },
   },
   components: {},
 };
