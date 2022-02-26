@@ -32,6 +32,32 @@ import '@/assets/fonts/iconfont.css'
 // 导入vue-table-with-tree-grid
 import TreeTable from 'vue-table-with-tree-grid'
 
+// 导入vuequilleditor
+import VueQuillEditor from 'vue-quill-editor'
+
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor, /* { default global options } */)
+
+
+// 注册全局过滤器
+Vue.filter('dataFormat', function (originVal){
+  const dt = new Date(originVal)
+
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + '').padStart(2, '0')
+
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + '').padStart(2, '0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
 
 
 Vue.use(VueAxios, axios);
@@ -39,7 +65,7 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 
-Vue.component('tree-table',TreeTable)
+Vue.component('tree-table', TreeTable)
 
 new Vue({
   router,

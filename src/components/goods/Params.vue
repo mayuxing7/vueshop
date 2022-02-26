@@ -521,7 +521,7 @@ export default {
 
     // 当前选中的三级分类id
     cateId() {
-      if (this.selectedCateKeys.length == 3) {
+      if (this.selectedCateKeys.length === 3) {
         return this.selectedCateKeys[2];
       }
 
